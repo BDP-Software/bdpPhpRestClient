@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/SVNG/!svn/ver/198/trunk/apiclient/core
+END
+class.gPropsRestClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/SVNG/!svn/ver/418/trunk/apiclient/core/class.gPropsRestClient.php
+END
+class.bdCoreRestClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/SVNG/!svn/ver/208/trunk/apiclient/core/class.bdCoreRestClient.php
+END
+class.restClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/SVNG/!svn/ver/210/trunk/apiclient/core/class.restClient.php
+END
+class.gStatsRestClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/SVNG/!svn/ver/200/trunk/apiclient/core/class.gStatsRestClient.php
+END
