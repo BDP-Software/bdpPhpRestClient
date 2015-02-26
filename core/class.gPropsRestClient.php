@@ -35,9 +35,9 @@ function getProperty($pId=0){
 	$output = false;
 	//$result = $this->post("property/michael",array('pId'=>$pId)); //example post - use later for updating
 	try{
-		$result = $this->api->get("property/". $pId,array(),array('Content-Type'=>'application/json'));
+		$result = $this->api->get("props/". $sQuery,array(),array('Content-Type'=>'application/json'));
 		$output = json_decode($result->response,true);
-		//echo $result->response; exit;
+		echo $result->response; exit;
 	}
 	catch(Exception $e){
 		$this->logApiError($e);
@@ -55,7 +55,7 @@ function getProperties($sQuery=0){
 	//$result = $this->post("property/michael",array('pId'=>$pId)); //example post - use later for updating
 	$output = false;
 	try{
-		$result = $this->api->get("properties/". $sQuery,array(),array('Content-Type'=>'application/json'));
+		$result = $this->api->get("props/". $sQuery,array(),array('Content-Type'=>'application/json'));
 		$output = json_decode($result->response,true);
 		//echo $result->response; exit;
 		

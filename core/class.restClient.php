@@ -66,8 +66,10 @@ class RestClient {
 	 * logs an array to the output
 	*/
 	function logArray($data){
-		foreach($data as $key => $val){
-			$this->logReport($key .' :: '. $val);
+		if(is_array($data)){
+			foreach($data as $key => $val){
+				$this->logReport($key .' :: '. $val);
+			}
 		}
 	}
 
@@ -241,7 +243,8 @@ class RestClient {
 		$curlDebugArr = array();
 		foreach($curlopt as $key => $val){
 			if(isset($curlOptLookup[$key])){
-				$curlDebugArr[$key] = $curlOptLookup[$key] .' ('. $key .') : '. $val;
+				//var_dump($val);
+				$curlDebugArr[$key] = $curlOptLookup[$key] .' ('. $key .') : '. (is_array($val) ? implode($val) : $val);
 			}
 		}
 		$this->curlDebugArr = $curlDebugArr;
@@ -263,8 +266,8 @@ class RestClient {
 		
 		//echo "HTTP Code: '". $client->info->http_code ."'";
 		//echo $client->response;
+		$fail = false;
 		
-		//Mike Barcroft
 		//BD modification to support json posts
 		//17/03/13
 		if($client->info->http_code > 399){

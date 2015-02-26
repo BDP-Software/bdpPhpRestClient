@@ -2,7 +2,7 @@
 //start the session
 session_start();
 
-$incPath = '../lib/';
+$incPath = 'bdpPhpRestClient/core/';
 
 //grab the core client
 require_once($incPath . 'class.bdCoreRestClient.php');
@@ -16,7 +16,7 @@ $api->apiKey = '#### YOUR API KEY ####';
 //set the shared secret
 $api->sharedSecret = '#### YOUR SHARED SECRET ####';
 //set the wsdl path
-$api->apiPath = 'https://api.bdphq.com/restapi';
+$api->apiPath = 'https://bdphq.com/restapi';
 //set the firm id
 $api->accId = '### YOUR ACCOUNT ID ###';
 //force insecurity when running local and unable to authenticate against ssl
@@ -31,6 +31,10 @@ $api->startUp();
 $propertyData = $api->getProperty('1');
 echo'Got property data:';
 print_r($propertyData);
+
+$allProperties = $api->getProperties();
+//$allProperties = $api->getProperties('nres=999999');
+var_dump($allProperties);
 
 
 echo"<br/>";
