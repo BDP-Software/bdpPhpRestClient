@@ -68,6 +68,25 @@ function getProperties($sQuery=0){
 }
 
 /**
+ * Gets all branch data
+*/
+function getBranches(){
+	//run the query
+	//$result = $this->post("property/michael",array('pId'=>$pId)); //example post - use later for updating
+	$output = false;
+	try{
+		$result = $this->api->get("branches/",array(),array('Content-Type'=>'application/json'));
+		$output = json_decode($result->response,true);
+		//echo $result->response; exit;
+	}
+	catch(Exception $e){
+		$this->logApiError($e);
+	}
+	//return the response
+	return $output;
+}
+
+/**
  * creates a new detail request - this covers viewins, details about properties and general newsletter requests
  *@param array $rData Request Data
 */
