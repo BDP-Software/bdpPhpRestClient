@@ -28,16 +28,20 @@ $api->startUp();
 
 //Retrieve Specific Property Data
 //Use a valid property ID on your account
-$propertyData = $api->getProperty('1');
+
+$id = '1'; // This is the property ID we are going to fetch.
+
+$propertyData = $api->getProperty($id);
 echo'Got property data:';
-print_r($propertyData);
+
+var_dump($propertyData);
 
 $allProperties = $api->getProperties();
 //$allProperties = $api->getProperties('nres=999999');
 var_dump($allProperties);
 
 
-echo"<br/>";
+echo '<br/>';
 echo count($api->apiErrors) .' Api Errors';
 var_dump($api->apiErrors);
 

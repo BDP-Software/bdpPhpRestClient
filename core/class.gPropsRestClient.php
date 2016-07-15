@@ -22,7 +22,7 @@ class gPropsRestClient extends bdCoreRestClient{
 /**
  * constructor
 */
-function __construct(){
+public function __construct(){
 	parent :: __construct();
 }
 
@@ -30,14 +30,14 @@ function __construct(){
  * Gets property data
  *@param int $pId Property Id
 */
-function getProperty($pId=0){
+public function getProperty($pId=0){
 	//run the query
 	$output = false;
 	//$result = $this->post("property/michael",array('pId'=>$pId)); //example post - use later for updating
 	try{
-		$result = $this->api->get("props/". $sQuery,array(),array('Content-Type'=>'application/json'));
+		$result = $this->api->get("property/". $pId ,array(),array('Content-Type'=>'application/json'));
 		$output = json_decode($result->response,true);
-		echo $result->response; exit;
+		//echo $result->response; exit;
 	}
 	catch(Exception $e){
 		$this->logApiError($e);
@@ -50,7 +50,7 @@ function getProperty($pId=0){
  * Gets all property data
  *@param int $pId Property Id
 */
-function getProperties($sQuery=0){
+public function getProperties($sQuery=0){
 	//run the query
 	//$result = $this->post("property/michael",array('pId'=>$pId)); //example post - use later for updating
 	$output = false;
@@ -70,7 +70,7 @@ function getProperties($sQuery=0){
 /**
  * Gets all branch data
 */
-function getBranches(){
+public function getBranches(){
 	//run the query
 	//$result = $this->post("property/michael",array('pId'=>$pId)); //example post - use later for updating
 	$output = false;
@@ -90,7 +90,7 @@ function getBranches(){
  * creates a new detail request - this covers viewins, details about properties and general newsletter requests
  *@param array $rData Request Data
 */
-function newRequest($rData=array()){
+public function newRequest($rData=array()){
 	//run the query
 	//$result = $this->post("property/michael",array('pId'=>$pId)); //example post - use later for updating
 	$output = false;
